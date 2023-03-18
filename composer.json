@@ -1,5 +1,5 @@
 {
-    "name": "explore/elegant-admin",
+    "name": "elegant-admin/provider",
     "description": "laravel admin",
     "type": "library",
     "keywords": ["laravel", "admin", "grid", "form", "tree"],

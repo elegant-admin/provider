@@ -2,68 +2,12 @@
 
 # 基于[laravel-admin](https://github.com/z-song/laravel-admin) 的升级版，修复了各种问题，新增功能，有任何问题，欢迎[issues](https://github.com/elegant-admin/provider/issues)
 
-## The changes are as follows 改动如下
-
-- Automatically generate permission controls that are entirely route-based
-- 自动生成完全基于路由的权限控制
-  
-
-- When an administrator selects a role, they can configure the maximum number of roles
-- 管理员选择角色时，可配置最大角色数量
-  
-
-- Localization support is more friendly
-- 本地化支持更友好
-  
-
-- Optimize configuration files (custom configurationMore )
-- 优化配置文件（自定义配置更多）
-  
-
-- Optimize styling and user experience
-- 优化样式和用户体验
-  
-
-- Support for soft delete (added restore and force delete operations)
-- 对软删除的支持（增加恢复和强制删除操作）
-  
-
-- Implement the Model Tree action buttons as in tables (icon configuration required)
-- 实现模型树操作按钮与表格一样（需要图标配置）
-  
-
-- When you implement model tree editing, you can edit specified fields, configure the maximum hierarchical relationship, and configure the default collapse
-- 实现模型树编辑时可只编辑指定字段，可配置最大层级关系，可配置默认折叠
-  
-
-- Implement the same pattern as the head navigation bar action button as the table button (icon configuration required)
-- 实现头部导航条操作按钮与表格按钮相同模式（需要图标配置）
-  
-
-- The editor has been restored to usability and resolved errors in relational mode
-- 编辑器已恢复可使用且解决了关系模式下的错误
-  
-
-- Optimized file upload, multiple files can be deleted, sorted, and added simultaneous operations
-- 优化文件上传，多文件可以删除，排序，新增同时操作
-  
-
-- Form switch component, radio component, multi-select component supports post-action script '->change after()'
-- 表单开关组件，单选组件，多选组件支持操作后脚本`->changeAfter()`
-  
-
-- Forms implement complex layouts, and the 'form->horizontal()' method restores the original layout
-- 表单实现复杂布局，`$form->horizontal()`方法可恢复原来的布局
-  
-
-- Forms implement both narrow and widescreen, and the 'form->disable Container()' method enables widescreen
-- 表单实现窄屏和宽屏，`$form->disableContainer()`方法可实现宽屏
+## The change logs [releases](https://github.com/elegant-admin/provider/releases)
 
 ## 复杂表单配置
 
 ```php
 use Elegant\Admin\Form;
-
 
 $form->row(function (Form\Layout\Row $row) {
     $row->text('text', 'Text');
