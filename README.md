@@ -155,7 +155,7 @@ class Replicate extends RowAction
 First, install laravel 8.*, and make sure that the database connection settings are correct.
 
 ```shell
-composer require explore/elegant-admin:1.*
+composer require elegant-admin/provider:1.*
 ```
 
 Then run these commands to publish assets and config：
