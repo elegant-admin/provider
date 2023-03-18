@@ -1,0 +1,85 @@
+<?php
+
+namespace DummyNamespace;
+
+use DummyModelNamespace;
+use Elegant\Admin\Controllers\AdminController;
+use Elegant\Admin\Form;
+use Elegant\Admin\Grid;
+use Elegant\Admin\Show;
+
+class DummyClass extends AdminController
+{
+    /**
+     * @var string
+     */
+    protected $title = 'DummyTitle';
+
+    /**
+     * @var string
+     */
+    protected $model = DummyModel::class;
+
+    /**
+     * Title for current resource.
+     *
+     * @var string
+     */
+    //protected function title()
+    //{
+    //    return 'DummyTitle';
+    //}
+
+    /**
+     * Model for current resource.
+     *
+     * @return \Illuminate\Config\Repository|mixed|string
+     */
+    //protected function model()
+    //{
+    //    return DummyModel::class;
+    //}
+
+    /**
+     * Make a grid builder.
+     *
+     * @return Grid
+     */
+    protected function grid()
+    {
+        $grid = new Grid(new $this->model);
+
+DummyGrid
+
+        return $grid;
+    }
+
+    /**
+     * Make a show builder.
+     *
+     * @param mixed $id
+     * @return Show
+     */
+    protected function detail($id)
+    {
+        $show = new Show($this->model::findOrFail($id));
+
+DummyShow
+
+        return $show;
+    }
+
+    /**
+     * Make a form builder.
+     *
+     * @return Form
+     */
+    protected function form()
+    {
+        $form = new Form(new $this->model);
+
+DummyForm
+
+        return $form;
+    }
+}
