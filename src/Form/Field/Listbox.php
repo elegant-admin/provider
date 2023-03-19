@@ -74,11 +74,11 @@ EOT;
     public function render()
     {
         $settings = array_merge([
-            'infoText'              => trans('admin.listbox.text_total'),
-            'infoTextEmpty'         => trans('admin.listbox.text_empty'),
-            'infoTextFiltered'      => trans('admin.listbox.filtered'),
-            'filterTextClear'       => trans('admin.listbox.filter_clear'),
-            'filterPlaceHolder'     => trans('admin.listbox.filter_placeholder'),
+            'infoText'              => admin_trans('listbox.text_total'),
+            'infoTextEmpty'         => admin_trans('listbox.text_empty'),
+            'infoTextFiltered'      => admin_trans('listbox.filtered'),
+            'filterTextClear'       => admin_trans('listbox.filter_clear'),
+            'filterPlaceHolder'     => admin_trans('listbox.filter_placeholder'),
             'selectorMinimalHeight' => 200,
         ], $this->settings);
 

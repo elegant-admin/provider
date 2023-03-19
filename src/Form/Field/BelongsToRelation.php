@@ -71,9 +71,9 @@ trait BelongsToRelation
     public function addHtml()
     {
         $trans = [
-            'choose' => admin_trans('admin.choose'),
-            'cancal' => admin_trans('admin.cancel'),
-            'submit' => admin_trans('admin.submit'),
+            'choose' => admin_admin_trans('choose'),
+            'cancal' => admin_admin_trans('cancel'),
+            'submit' => admin_admin_trans('submit'),
         ];
 
         $html = <<<HTML

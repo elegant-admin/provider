@@ -112,8 +112,8 @@ class Dialog extends Interactor
     protected function defaultSettings()
     {
         $trans = [
-            'cancel' => trans('admin.cancel'),
-            'submit' => trans('admin.submit'),
+            'cancel' => admin_trans('cancel'),
+            'submit' => admin_trans('submit'),
         ];
 
         return [

@@ -551,8 +551,8 @@ SCRIPT;
     protected function buildConfirmActionPromise()
     {
         $trans = [
-            'cancel' => trans('admin.cancel'),
-            'submit' => trans('admin.submit'),
+            'cancel' => admin_trans('cancel'),
+            'submit' => admin_trans('submit'),
         ];
 
         $settings = [

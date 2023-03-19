@@ -307,9 +307,9 @@ EOT;
 
         if ($this->fileActionSettings['showRemove']) {
             $text = [
-                'title'   => trans('admin.delete_confirm'),
-                'confirm' => trans('admin.confirm'),
-                'cancel'  => trans('admin.cancel'),
+                'title'   => admin_trans('delete_confirm'),
+                'confirm' => admin_trans('confirm'),
+                'cancel'  => admin_trans('cancel'),
             ];
 
             $this->script .= <<<EOT

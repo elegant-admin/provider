@@ -15,9 +15,9 @@ class BatchDelete extends BatchAction
     public function script()
     {
         $trans = [
-            'delete_confirm' => trans('admin.delete_confirm'),
-            'confirm'        => trans('admin.confirm'),
-            'cancel'         => trans('admin.cancel'),
+            'delete_confirm' => admin_trans('delete_confirm'),
+            'confirm'        => admin_trans('confirm'),
+            'cancel'         => admin_trans('cancel'),
         ];
 
         return <<<EOT

@@ -19,7 +19,7 @@ class Restore extends TreeAction
      */
     public function name()
     {
-        return trans('admin.restore');
+        return admin_trans('restore');
     }
 
     protected function icon()
@@ -47,10 +47,10 @@ class Restore extends TreeAction
 //                $model->restore();
 //            });
 //        } catch (\Exception $exception) {
-//            return $this->response()->error(trans('admin.restore_failed') . ": {$exception->getMessage()}");
+//            return $this->response()->error(admin_trans('restore_failed') . ": {$exception->getMessage()}");
 //        }
 //
-//        return $this->response()->success(trans('admin.restore_succeeded'))->refresh();
+//        return $this->response()->success(admin_trans('restore_succeeded'))->refresh();
 //    }
 
     /**
@@ -58,6 +58,6 @@ class Restore extends TreeAction
      */
     public function dialog()
     {
-        $this->question(trans('admin.restore_confirm'), '', ['confirmButtonColor' => '#d33']);
+        $this->question(admin_trans('restore_confirm'), '', ['confirmButtonColor' => '#d33']);
     }
 }

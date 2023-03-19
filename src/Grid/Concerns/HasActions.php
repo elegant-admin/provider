@@ -118,7 +118,7 @@ trait HasActions
             return;
         }
 
-        $this->addColumn(Grid\Column::ACTION_COLUMN_NAME, trans('admin.action'))
+        $this->addColumn(Grid\Column::ACTION_COLUMN_NAME, admin_trans('action'))
             ->displayUsing($this->getActionClass(), [$this->actionsCallback]);
     }
 }

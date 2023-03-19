@@ -14,7 +14,7 @@ class MenuController extends AdminController
 {
     protected function title()
     {
-        return trans('admin.auth_menus');
+        return admin_trans('auth_menus');
     }
 
     /**

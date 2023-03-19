@@ -11,7 +11,7 @@ class Show extends TreeAction
      */
     public function name()
     {
-        return trans('admin.show');
+        return admin_trans('show');
     }
 
     /**

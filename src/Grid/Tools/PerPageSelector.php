@@ -75,8 +75,8 @@ class PerPageSelector extends AbstractTool
         })->implode("\r\n");
 
         $trans = [
-            'show'    => trans('admin.show'),
-            'entries' => trans('admin.entries'),
+            'show'    => admin_trans('show'),
+            'entries' => admin_trans('entries'),
         ];
 
         return <<<EOT

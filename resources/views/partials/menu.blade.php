@@ -8,8 +8,8 @@
                     <a href="{{ admin_url($menu['uri']) }}">
                 @endif
                         <i class="fa {{$menu['icon']}}"></i>
-                        @if (Lang::has($titleTranslation = 'admin.menu_titles.' . trim(str_replace(' ', '_', strtolower($menu['title'])))))
-                            <span>{{ trans($titleTranslation) }}</span>
+                        @if (Lang::has($titleTranslation = 'menu_titles.' . trim(str_replace(' ', '_', strtolower($menu['title'])))))
+                            <span>{{ admin_trans($titleTranslation) }}</span>
                         @else
                             <span>{{ admin_trans($menu['title']) }}</span>
                         @endif
@@ -19,8 +19,8 @@
             <li class="treeview">
                 <a href="#">
                     <i class="fa {{ $menu['icon'] }}"></i>
-                    @if (Lang::has($titleTranslation = 'admin.menu_titles.' . trim(str_replace(' ', '_', strtolower($menu['title'])))))
-                        <span>{{ trans($titleTranslation) }}</span>
+                    @if (Lang::has($titleTranslation = 'menu_titles.' . trim(str_replace(' ', '_', strtolower($menu['title'])))))
+                        <span>{{ admin_trans($titleTranslation) }}</span>
                     @else
                         <span>{{ admin_trans($menu['title']) }}</span>
                     @endif

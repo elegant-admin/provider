@@ -61,7 +61,7 @@ class AdminController extends Controller
     {
         return $content
             ->title($this->title)
-            ->description($this->description['index'] ?? trans('admin.list'))
+            ->description($this->description['index'] ?? admin_trans('list'))
             ->body($this->grid());
     }
 
@@ -77,7 +77,7 @@ class AdminController extends Controller
     {
         return $content
             ->title($this->title)
-            ->description($this->description['show'] ?? trans('admin.show'))
+            ->description($this->description['show'] ?? admin_trans('show'))
             ->body($this->detail($id));
     }
 
@@ -93,7 +93,7 @@ class AdminController extends Controller
     {
         return $content
             ->title($this->title)
-            ->description($this->description['edit'] ?? trans('admin.edit'))
+            ->description($this->description['edit'] ?? admin_trans('edit'))
             ->body($this->form()->edit($id));
     }
 
@@ -108,7 +108,7 @@ class AdminController extends Controller
     {
         return $content
             ->title($this->title)
-            ->description($this->description['create'] ?? trans('admin.create'))
+            ->description($this->description['create'] ?? admin_trans('create'))
             ->body($this->form());
     }
 }

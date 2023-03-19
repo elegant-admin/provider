@@ -32,7 +32,7 @@ class CreateButton extends AbstractTool
             return '';
         }
 
-        $new = trans('admin.new');
+        $new = admin_trans('new');
 
         return <<<EOT
 

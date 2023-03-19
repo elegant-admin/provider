@@ -258,7 +258,7 @@ class Tree implements Renderable
      */
     protected function script()
     {
-        $save_succeeded = trans('admin.save_succeeded');
+        $save_succeeded = admin_trans('save_succeeded');
 
         $nestableOptions = json_encode($this->nestableOptions);
 

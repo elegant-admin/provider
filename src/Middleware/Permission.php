@@ -24,6 +24,10 @@ class Permission
             return $next($request);
         }
 
+        if (strpos($request->route()->action['as'],'admin') === false) {
+            return $next($request);
+        }
+
         if (!Admin::user() || $this->shouldPassThrough($request)) {
             return $next($request);
         }
@@ -33,11 +37,11 @@ class Permission
         }
 
         if (!$request->pjax() && $request->ajax()) {
-            return $this->response()->error(trans('admin.deny'))->send();
+            return $this->response()->error(admin_trans('deny'))->send();
         }
 
         Pjax::respond(
-            response(Admin::content()->withError(trans('admin.deny')))
+            response(Admin::content()->withError(admin_trans('deny')))
         );
     }
 

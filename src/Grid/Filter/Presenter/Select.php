@@ -75,7 +75,7 @@ class Select extends Presenter
         if (empty($this->script)) {
             $placeholder = json_encode([
                 'id'   => '',
-                'text' => trans('admin.choose'),
+                'text' => admin_trans('choose'),
             ]);
 
             $configs = array_merge([
@@ -160,7 +160,7 @@ SCRIPT;
             'allowClear'         => true,
             'placeholder'        => [
                 'id'        => '',
-                'text'      => trans('admin.choose'),
+                'text'      => admin_trans('choose'),
             ],
         ], $this->config);
 
@@ -197,7 +197,7 @@ EOT;
     {
         $configs = array_merge([
             'allowClear'         => true,
-            'placeholder'        => trans('admin.choose'),
+            'placeholder'        => admin_trans('choose'),
             'minimumInputLength' => 1,
         ], $this->config);
 

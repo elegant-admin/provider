@@ -517,8 +517,8 @@ class Form implements Renderable
         $id = $this->attributes['id'];
 
         $trans = [
-            'cancel' => trans('admin.cancel'),
-            'submit' => trans('admin.submit'),
+            'cancel' => admin_trans('cancel'),
+            'submit' => admin_trans('submit'),
         ];
 
         $settings = [

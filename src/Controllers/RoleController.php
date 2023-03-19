@@ -13,7 +13,7 @@ class RoleController extends AdminController
      */
     protected function title()
     {
-        return trans('admin.auth_roles');
+        return admin_trans('auth_roles');
     }
 
     /**
@@ -35,9 +35,9 @@ class RoleController extends AdminController
         $grid->model()->orderByDesc('id');
 
         $grid->column('id', 'ID')->sortable();
-        $grid->column('slug', trans('admin.slug'));
-        $grid->column('name', trans('admin.name'));
-//        $grid->column('permissions', trans('admin.permissions'))->width(500)->display(function ($permissions) {
+        $grid->column('slug', admin_trans('slug'));
+        $grid->column('name', admin_trans('name'));
+//        $grid->column('permissions', admin_trans('permissions'))->width(500)->display(function ($permissions) {
 //            $names = [];
 //            foreach (set_permissions() as $key => $value) {
 //                if ($permissions && in_array($value, $permissions)) {
@@ -47,8 +47,8 @@ class RoleController extends AdminController
 //            return $names;
 //        })->label();
 
-        $grid->column('created_at', trans('admin.created_at'));
-        $grid->column('updated_at', trans('admin.updated_at'));
+        $grid->column('created_at', admin_trans('created_at'));
+        $grid->column('updated_at', admin_trans('updated_at'));
 
         $grid->actions(function (Grid\Displayers\Actions $actions) {
             if ($actions->row->slug == 'administrator') {
@@ -71,7 +71,7 @@ class RoleController extends AdminController
 
         $grid->filter(function(Grid\Filter $filter){
             $filter->disableIdFilter();
-            $filter->scope('trashed', trans('admin.trashed'))->onlyTrashed();
+            $filter->scope('trashed', admin_trans('trashed'))->onlyTrashed();
         });
 
         return $grid;
@@ -89,9 +89,9 @@ class RoleController extends AdminController
         $show = new Show($this->model::findOrFail($id));
 
         $show->field('id', 'ID');
-        $show->field('slug', trans('admin.slug'));
-        $show->field('name', trans('admin.name'));
-//        $show->field('permissions', trans('admin.permissions'))->as(function ($permissions) {
+        $show->field('slug', admin_trans('slug'));
+        $show->field('name', admin_trans('name'));
+//        $show->field('permissions', admin_trans('permissions'))->as(function ($permissions) {
 //            $names = [];
 //            foreach (set_permissions() as $key => $value) {
 //                if ($permissions && in_array($value, $permissions)) {
@@ -100,8 +100,8 @@ class RoleController extends AdminController
 //            }
 //            return $names;
 //        })->label();
-        $show->field('created_at', trans('admin.created_at'));
-        $show->field('updated_at', trans('admin.updated_at'));
+        $show->field('created_at', admin_trans('created_at'));
+        $show->field('updated_at', admin_trans('updated_at'));
 
         return $show;
     }
@@ -117,12 +117,12 @@ class RoleController extends AdminController
 
         $form->display('id', 'ID');
 
-        $form->text('slug', trans('admin.slug'))->rules('required');
-        $form->text('name', trans('admin.name'))->rules('required');
-        $form->checkboxGroup('permissions', trans('admin.permissions'))->options(group_permissions());
+        $form->text('slug', admin_trans('slug'))->rules('required');
+        $form->text('name', admin_trans('name'))->rules('required');
+        $form->checkboxGroup('permissions', admin_trans('permissions'))->options(group_permissions());
 
-        $form->display('created_at', trans('admin.created_at'));
-        $form->display('updated_at', trans('admin.updated_at'));
+        $form->display('created_at', admin_trans('created_at'));
+        $form->display('updated_at', admin_trans('updated_at'));
 
         return $form;
     }

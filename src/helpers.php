@@ -573,10 +573,8 @@ if (!function_exists('set_permissions')) {
 
             $as = [];
             foreach ($array_keys as $array_key) {
-                $trans = trans('admin.' . $array_key);
-                if (mb_strpos($trans, 'admin.') !== false) {
-                    $trans = $array_key;
-                }
+                $trans = admin_trans($array_key);
+
                 array_push($as, $trans);
             }
 

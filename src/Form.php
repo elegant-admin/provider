@@ -247,10 +247,10 @@ class Form extends AbstractForm implements Renderable
                 return $ret;
             }
         } catch (\Exception $exception) {
-            return $this->response()->error(trans('admin.destroy_failed').":{$exception->getMessage()}")->send();
+            return $this->response()->error(admin_trans('destroy_failed').":{$exception->getMessage()}")->send();
         }
 
-        return $this->response()->success(trans('admin.destroy_succeeded'))->refresh()->send();
+        return $this->response()->success(admin_trans('destroy_succeeded'))->refresh()->send();
     }
 
     /**
@@ -278,10 +278,10 @@ class Form extends AbstractForm implements Renderable
                 }
             });
         } catch (\Exception $exception) {
-            return $this->response()->error(trans('admin.restore_failed'))->send();
+            return $this->response()->error(admin_trans('restore_failed'))->send();
         }
 
-        return $this->response()->success(trans('admin.restore_succeeded'))->refresh()->send();
+        return $this->response()->success(admin_trans('restore_succeeded'))->refresh()->send();
     }
 
     /**
@@ -311,10 +311,10 @@ class Form extends AbstractForm implements Renderable
                 }
             });
         } catch (\Exception $exception) {
-            return $this->response()->error(trans('admin.delete_failed'))->send();
+            return $this->response()->error(admin_trans('delete_failed'))->send();
         }
 
-        return $this->response()->success(trans('admin.delete_succeeded'))->refresh()->send();
+        return $this->response()->success(admin_trans('delete_succeeded'))->refresh()->send();
     }
 
     /**
@@ -376,7 +376,7 @@ class Form extends AbstractForm implements Renderable
             return $response;
         }
 
-        if ($response = $this->ajaxResponse(trans('admin.save_succeeded'))) {
+        if ($response = $this->ajaxResponse(admin_trans('save_succeeded'))) {
             return $response;
         }
 
@@ -586,7 +586,7 @@ class Form extends AbstractForm implements Renderable
             return $result;
         }
 
-        if ($response = $this->ajaxResponse(trans('admin.update_succeeded'))) {
+        if ($response = $this->ajaxResponse(admin_trans('update_succeeded'))) {
             return $response;
         }
 
@@ -644,7 +644,7 @@ class Form extends AbstractForm implements Renderable
             $url = request(Builder::PREVIOUS_URL_KEY) ?: $resourcesPath;
         }
 
-        admin_toastr(trans('admin.save_succeeded'));
+        admin_toastr(admin_trans('save_succeeded'));
 
         return redirect($url);
     }
@@ -679,7 +679,7 @@ class Form extends AbstractForm implements Renderable
         if ($id && $this->handleOrderable($id, $data)) {
             return response([
                 'status'  => true,
-                'message' => trans('admin.update_succeeded'),
+                'message' => admin_trans('update_succeeded'),
             ]);
         }
 

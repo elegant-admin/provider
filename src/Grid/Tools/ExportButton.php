@@ -61,10 +61,10 @@ SCRIPT;
         $this->setUpScripts();
 
         $trans = [
-            'export'        => trans('admin.export'),
-            'all'           => trans('admin.all'),
-            'current_page'  => trans('admin.current_page'),
-            'selected_rows' => trans('admin.selected_rows'),
+            'export'        => admin_trans('export'),
+            'all'           => admin_trans('all'),
+            'current_page'  => admin_trans('current_page'),
+            'selected_rows' => admin_trans('selected_rows'),
         ];
 
         $page = request('page', 1);

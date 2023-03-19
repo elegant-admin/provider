@@ -55,7 +55,7 @@ class ColumnEdit extends TreeAction
      */
     public function name()
     {
-        return trans('admin.edit');
+        return admin_trans('edit');
     }
 
     /**

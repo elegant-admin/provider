@@ -213,9 +213,9 @@ EOT;
 
         if ($this->fileActionSettings['showRemove']) {
             $text = [
-                'title'   => trans('admin.delete_confirm'),
-                'confirm' => trans('admin.confirm'),
-                'cancel'  => trans('admin.cancel'),
+                'title'   => admin_trans('delete_confirm'),
+                'confirm' => admin_trans('confirm'),
+                'cancel'  => admin_trans('cancel'),
             ];
 
             $this->script .= <<<EOT
@@ -256,7 +256,7 @@ EOT;
             return $this->renderFilePicker();
         }
 
-        $this->options(['overwriteInitial' => true, 'msgPlaceholder' => trans('admin.choose_file')]);
+        $this->options(['overwriteInitial' => true, 'msgPlaceholder' => admin_trans('choose_file')]);
 
         $this->setupDefaultOptions();
 

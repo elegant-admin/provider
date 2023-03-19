@@ -24,14 +24,14 @@ class AdminTablesSeeder extends Seeder
         User::query()->create([
             'username' => 'admin',
             'password' => Hash::make('admin'),
-            'name'     => 'super_administrator',
+            'name'     => 'administrator',
             'permissions' => [],
         ]);
 
         // create a role.
         Role::query()->truncate();
         Role::query()->create([
-            'name'        => 'super_administrator',
+            'name'        => 'administrator',
             'slug'        => 'administrator',
             'permissions' => ["*"],
         ]);

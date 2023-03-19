@@ -431,11 +431,11 @@ class Builder
         }
 
         if ($this->mode === static::MODE_CREATE) {
-            return trans('admin.create');
+            return admin_trans('create');
         }
 
         if ($this->mode === static::MODE_EDIT) {
-            return trans('admin.edit');
+            return admin_trans('edit');
         }
 
         return '';
@@ -528,8 +528,8 @@ class Builder
     public function confirm(string $message)
     {
         $trans = [
-            'confirm' => trans('admin.confirm'),
-            'cancel'  => trans('admin.cancel'),
+            'confirm' => admin_trans('confirm'),
+            'cancel'  => admin_trans('cancel'),
         ];
 
         $script = <<<SCRIPT

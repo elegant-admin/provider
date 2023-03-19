@@ -96,7 +96,7 @@ class ValuePicker
      */
     protected function addPickBtn(\Closure $callback = null)
     {
-        $text = admin_trans('admin.browse');
+        $text = admin_admin_trans('browse');
 
         $btn = <<<HTML
 <a class="btn btn-primary" data-toggle="modal" data-target="#{$this->modal}">

@@ -105,7 +105,7 @@ class AuthController extends Controller
         );
 
         return $content
-            ->title(trans('admin.user_setting'))
+            ->title(admin_trans('user_setting'))
             ->body($form->edit(Admin::user()->id));
     }
 
@@ -130,11 +130,11 @@ class AuthController extends Controller
 
         $form = new Form(new $class());
 
-        $form->display('username', trans('admin.username'));
-        $form->text('name', trans('admin.name'))->rules('required');
-        $form->image('avatar', trans('admin.avatar'));
-        $form->password('password', trans('admin.password'))->rules('confirmed|required');
-        $form->password('password_confirmation', trans('admin.password_confirmation'))->rules('required')
+        $form->display('username', admin_trans('username'));
+        $form->text('name', admin_trans('name'))->rules('required');
+        $form->image('avatar', admin_trans('avatar'));
+        $form->password('password', admin_trans('password'))->rules('confirmed|required');
+        $form->password('password_confirmation', admin_trans('password_confirmation'))->rules('required')
             ->default(function ($form) {
                 return $form->model()->password;
             });
@@ -150,7 +150,7 @@ class AuthController extends Controller
         });
 
         $form->saved(function () {
-            admin_toastr(trans('admin.update_succeeded'));
+            admin_toastr(admin_trans('update_succeeded'));
 
             return redirect(admin_url('self_setting'));
         });
@@ -191,7 +191,7 @@ class AuthController extends Controller
      */
     protected function sendLoginResponse(Request $request)
     {
-        admin_toastr(trans('admin.login_successful'));
+        admin_toastr(admin_trans('login_successful'));
 
         $request->session()->regenerate();
 

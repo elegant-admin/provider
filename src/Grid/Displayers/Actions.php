@@ -236,9 +236,9 @@ EOT;
     protected function setupDeleteScript()
     {
         $trans = [
-            'destroy_confirm' => trans('admin.destroy_confirm'),
-            'confirm'        => trans('admin.confirm'),
-            'cancel'         => trans('admin.cancel'),
+            'destroy_confirm' => admin_trans('destroy_confirm'),
+            'confirm'        => admin_trans('confirm'),
+            'cancel'         => admin_trans('cancel'),
         ];
 
         $trans = array_merge($trans, $this->trans);

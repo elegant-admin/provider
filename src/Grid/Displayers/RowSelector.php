@@ -20,7 +20,7 @@ EOT;
         $all = $this->grid->getSelectAllName();
         $row = $this->grid->getGridRowName();
 
-        $selected = trans('admin.grid_items_selected');
+        $selected = admin_trans('grid_items_selected');
 
         return <<<EOT
 $('.{$row}-checkbox').iCheck({checkboxClass:'icheckbox_minimal-blue'}).on('ifChanged', function () {

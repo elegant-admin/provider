@@ -14,7 +14,7 @@ class UserController extends AdminController
      */
     protected function title()
     {
-        return trans('admin.auth_users');
+        return admin_trans('auth_users');
     }
 
     /**
@@ -36,10 +36,10 @@ class UserController extends AdminController
         $grid->model()->orderByDesc('id');
 
         $grid->column('id', 'ID')->sortable();
-        $grid->column('username', trans('admin.username'));
-        $grid->column('name', trans('admin.name'));
-        $grid->column('roles', trans('admin.roles'))->pluck('name')->label();
-//        $grid->column('permissions', trans('admin.permissions'))->width(500)->display(function ($permissions) {
+        $grid->column('username', admin_trans('username'));
+        $grid->column('name', admin_trans('name'));
+        $grid->column('roles', admin_trans('roles'))->pluck('name')->label();
+//        $grid->column('permissions', admin_trans('permissions'))->width(500)->display(function ($permissions) {
 //            $permissions = array_reduce($this->roles->pluck('permissions')->toArray(), 'array_merge', $permissions);
 //            $names = [];
 //            foreach (set_permissions() as $key => $value) {
@@ -49,8 +49,8 @@ class UserController extends AdminController
 //            }
 //            return $names;
 //        })->label();
-        $grid->column('created_at', trans('admin.created_at'));
-        $grid->column('updated_at', trans('admin.updated_at'));
+        $grid->column('created_at', admin_trans('created_at'));
+        $grid->column('updated_at', admin_trans('updated_at'));
 
         $grid->actions(function (Grid\Displayers\Actions $actions) {
             if ($actions->getKey() == 1) {
@@ -73,7 +73,7 @@ class UserController extends AdminController
 
         $grid->filter(function(Grid\Filter $filter){
             $filter->disableIdFilter();
-            $filter->scope('trashed', trans('admin.trashed'))->onlyTrashed();
+            $filter->scope('trashed', admin_trans('trashed'))->onlyTrashed();
         });
 
         return $grid;
@@ -91,12 +91,12 @@ class UserController extends AdminController
         $show = new Show($this->model::findOrFail($id));
 
         $show->field('id', 'ID');
-        $show->field('username', trans('admin.username'));
-        $show->field('name', trans('admin.name'));
-        $show->field('roles', trans('admin.roles'))->as(function ($roles) {
+        $show->field('username', admin_trans('username'));
+        $show->field('name', admin_trans('name'));
+        $show->field('roles', admin_trans('roles'))->as(function ($roles) {
             return $roles->pluck('name');
         })->label();
-//        $show->field('permissions', trans('admin.permissions'))->as(function ($permissions) {
+//        $show->field('permissions', admin_trans('permissions'))->as(function ($permissions) {
 //            $permissions = array_reduce($this->roles->pluck('permissions')->toArray(), 'array_merge', $permissions);
 //            $names = [];
 //            foreach (set_permissions() as $key => $value) {
@@ -106,8 +106,8 @@ class UserController extends AdminController
 //            }
 //            return $names;
 //        })->label();
-        $show->field('created_at', trans('admin.created_at'));
-        $show->field('updated_at', trans('admin.updated_at'));
+        $show->field('created_at', admin_trans('created_at'));
+        $show->field('updated_at', admin_trans('updated_at'));
 
         return $show;
     }
@@ -127,28 +127,28 @@ class UserController extends AdminController
         $connection = config('admin.database.connection');
 
         $form->display('id', 'ID');
-        $form->text('username', trans('admin.username'))
+        $form->text('username', admin_trans('username'))
             ->creationRules(['required', "unique:{$connection}.{$userTable}"])
             ->updateRules(['required', "unique:{$connection}.{$userTable},username,{{id}}"]);
 
-        $form->text('name', trans('admin.name'))->rules('required');
-        $form->image('avatar', trans('admin.avatar'));
-        $form->password('password', trans('admin.password'))->rules('required|confirmed');
-        $form->password('password_confirmation', trans('admin.password_confirmation'))->rules('required')
+        $form->text('name', admin_trans('name'))->rules('required');
+        $form->image('avatar', admin_trans('avatar'));
+        $form->password('password', admin_trans('password'))->rules('required|confirmed');
+        $form->password('password_confirmation', admin_trans('password_confirmation'))->rules('required')
             ->default(function ($form) {
                 return $form->model()->password;
             });
 
         $form->ignore(['password_confirmation']);
 
-        $form->multipleSelect('roles', trans('admin.roles'))
+        $form->multipleSelect('roles', admin_trans('roles'))
             ->options($roleModel::pluck('name', 'id'))
             ->optionDataAttributes('permissions', $roleModel::pluck('permissions', 'id'))
             ->config('maximumSelectionLength', config('admin.database.users_maximum_roles', '0'));
-        $form->checkboxGroup('permissions', trans('admin.permissions'))->options(group_permissions())->related('roles', 'permissions');
+        $form->checkboxGroup('permissions', admin_trans('permissions'))->options(group_permissions())->related('roles', 'permissions');
 
-        $form->display('created_at', trans('admin.created_at'));
-        $form->display('updated_at', trans('admin.updated_at'));
+        $form->display('created_at', admin_trans('created_at'));
+        $form->display('updated_at', admin_trans('updated_at'));
 
         $form->saving(function (Form $form) {
             if ($form->password && $form->model()->password != $form->password) {

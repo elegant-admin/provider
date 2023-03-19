@@ -42,7 +42,7 @@ class Alert extends Widget implements Renderable
     {
         $this->content = (string) $content;
 
-        $this->title = $title ?: trans('admin.alert');
+        $this->title = $title ?: admin_trans('alert');
 
         $this->style($style);
     }

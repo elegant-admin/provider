@@ -8,7 +8,7 @@ class BrowserBtn implements Renderable
 {
     public function render()
     {
-        $text = admin_trans('admin.choose');
+        $text = admin_admin_trans('choose');
 
         $html = <<<HTML
 <a href="javascript:void(0)" class="btn btn-primary btn-sm pull-left select-relation">

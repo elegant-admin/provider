@@ -150,7 +150,7 @@ class Select extends Field
 
         $placeholder = json_encode([
             'id'   => '',
-            'text' => trans('admin.choose'),
+            'text' => admin_trans('choose'),
         ]);
 
         $strAllowClear = var_export($allowClear, true);
@@ -200,7 +200,7 @@ EOT;
 
         $placeholder = json_encode([
             'id'   => '',
-            'text' => trans('admin.choose'),
+            'text' => admin_trans('choose'),
         ]);
 
         $strAllowClear = var_export($allowClear, true);
@@ -299,7 +299,7 @@ EOT;
             'allowClear'         => true,
             'placeholder'        => [
                 'id'        => '',
-                'text'      => trans('admin.choose'),
+                'text'      => admin_trans('choose'),
             ],
         ], $this->config);
 

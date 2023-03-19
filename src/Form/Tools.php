@@ -176,7 +176,7 @@ class Tools implements Renderable
      */
     protected function renderList()
     {
-        $text = trans('admin.list');
+        $text = admin_trans('list');
 
         return <<<EOT
 <div class="btn-group pull-right" style="margin-right: 5px">
@@ -192,7 +192,7 @@ EOT;
      */
     protected function renderView()
     {
-        $view = trans('admin.view');
+        $view = admin_trans('view');
 
         return <<<HTML
 <div class="btn-group pull-right" style="margin-right: 5px">
@@ -211,10 +211,10 @@ HTML;
     protected function renderDestroy()
     {
         $trans = [
-            'destroy_confirm' => trans('admin.destroy_confirm'),
-            'confirm'        => trans('admin.confirm'),
-            'cancel'         => trans('admin.cancel'),
-            'delete'         => trans('admin.delete'),
+            'destroy_confirm' => admin_trans('destroy_confirm'),
+            'confirm'        => admin_trans('confirm'),
+            'cancel'         => admin_trans('cancel'),
+            'delete'         => admin_trans('delete'),
         ];
 
         $class = uniqid();

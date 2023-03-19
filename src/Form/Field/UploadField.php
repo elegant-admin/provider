@@ -115,9 +115,9 @@ trait UploadField
         $defaults = [
             'overwriteInitial'     => false,
             'initialPreviewAsData' => true,
-            'msgPlaceholder'       => trans('admin.choose_file'),
-            'browseLabel'          => trans('admin.browse'),
-            'cancelLabel'          => trans('admin.cancel'),
+            'msgPlaceholder'       => admin_trans('choose_file'),
+            'browseLabel'          => admin_trans('browse'),
+            'cancelLabel'          => admin_trans('cancel'),
             'showRemove'           => false,
             'showUpload'           => false,
             'showCancel'           => false,
@@ -250,7 +250,7 @@ trait UploadField
             $this->storage = Storage::disk($disk);
         } catch (\Exception $exception) {
             if (!array_key_exists($disk, config('filesystems.disks'))) {
-                admin_error(trans('admin.config_error'), trans('admin.no_disk', ['disk' => $disk, 'file' => 'config/filesystems.php']));
+                admin_error(admin_trans('config_error'), admin_trans('no_disk', ['disk' => $disk, 'file' => 'config/filesystems.php']));
 
                 return $this;
             }

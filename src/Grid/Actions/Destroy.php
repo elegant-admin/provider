@@ -19,7 +19,7 @@ class Destroy extends RowAction
      */
     public function name()
     {
-        return trans('admin.destroy');
+        return admin_trans('destroy');
     }
 
     /**
@@ -42,10 +42,10 @@ class Destroy extends RowAction
 //                $model->delete();
 //            });
 //        } catch (\Exception $exception) {
-//            return $this->response()->error(trans('admin.destroy_failed') . ": {$exception->getMessage()}");
+//            return $this->response()->error(admin_trans('destroy_failed') . ": {$exception->getMessage()}");
 //        }
 //
-//        return $this->response()->success(trans('admin.destroy_succeeded'))->refresh();
+//        return $this->response()->success(admin_trans('destroy_succeeded'))->refresh();
 //    }
 
     /**
@@ -53,6 +53,6 @@ class Destroy extends RowAction
      */
     public function dialog()
     {
-        $this->question(trans('admin.destroy_confirm'), '', ['confirmButtonColor' => '#d33']);
+        $this->question(admin_trans('destroy_confirm'), '', ['confirmButtonColor' => '#d33']);
     }
 }

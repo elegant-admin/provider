@@ -19,7 +19,7 @@ class Restore extends RowAction
      */
     public function name()
     {
-        return trans('admin.restore');
+        return admin_trans('restore');
     }
 
     /**
@@ -42,10 +42,10 @@ class Restore extends RowAction
 //                $model->restore();
 //            });
 //        } catch (\Exception $exception) {
-//            return $this->response()->error(trans('admin.restore_failed') . ": {$exception->getMessage()}");
+//            return $this->response()->error(admin_trans('restore_failed') . ": {$exception->getMessage()}");
 //        }
 //
-//        return $this->response()->success(trans('admin.restore_succeeded'))->refresh();
+//        return $this->response()->success(admin_trans('restore_succeeded'))->refresh();
 //    }
 
     /**
@@ -53,6 +53,6 @@ class Restore extends RowAction
      */
     public function dialog()
     {
-        $this->question(trans('admin.restore_confirm'), '', ['confirmButtonColor' => '#d33']);
+        $this->question(admin_trans('restore_confirm'), '', ['confirmButtonColor' => '#d33']);
     }
 }
